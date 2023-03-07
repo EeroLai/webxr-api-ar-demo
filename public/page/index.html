@@ -53,7 +53,11 @@
                 var ground = BABYLON.Mesh.CreateGround('ground1', 6, 6, 2, scene);
 
                 // Add XR support
-                var xr = await scene.createDefaultXRExperienceAsync({/* configuration options, as needed */ })
+                var xr = await scene.createDefaultXRExperienceAsync({
+                    uiOptions: {
+                        sessionMode: 'immersive-ar'
+                    }
+                });
                 // return the created scene
                 return scene;
             }
