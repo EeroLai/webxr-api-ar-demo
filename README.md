@@ -5,6 +5,8 @@
 
 如何開始使用指南。
 
+> http://localhost:3000/page/index.html
+
 ### Installing
 
 ```bash
@@ -23,5 +25,3 @@ npm run dev
 npm run start
 ```
 ## ToDo
-
- 
