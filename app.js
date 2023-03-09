@@ -1,13 +1,13 @@
 const express = require('express');
-const http = require('http');
+const https = require('https');
 const app = express();
 const fs = require('fs');
-
-// const privateKey  = fs.readFileSync('./ssl/private.key');
-// const certificate = fs.readFileSync('./ssl/certificate.crt');
-//const credentials = { key: privateKey, cert: certificate};
+const options = {
+  key: fs.readFileSync('ssl/private.key'),
+  cert: fs.readFileSync('ssl/certificate.crt')
+}
 
 app.use(express.static('public'));
 
-const httpServer = http.createServer(app);
-httpServer.listen(3000);
+const httpsServer = https.createServer(options, app);
+httpsServer.listen(3000);
